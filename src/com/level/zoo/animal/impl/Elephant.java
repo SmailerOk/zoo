@@ -37,7 +37,14 @@ public class Elephant extends AbstractAnimal {
     }
 
     @Override
+    public int getMaxAge() {
+        return 53;
+    }
+
+    @Override
     public String goToToilet() {
        return "Лучше не знать....";
     }
+
+    public int maxAge = 50;
 }

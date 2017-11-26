@@ -37,4 +37,10 @@ public class Tiger extends AbstractAnimal {
 
     }
 
+    @Override
+    public int getMaxAge() {
+        return 33;
+    }
+
+    public int maxAge = 40;
 }

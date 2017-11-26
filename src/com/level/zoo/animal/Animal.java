@@ -17,4 +17,6 @@ public interface Animal {
 
     public void setName(String name);
 
+    public int getMaxAge();
+
 }

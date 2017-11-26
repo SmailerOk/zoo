@@ -35,4 +35,11 @@ public class Dog extends AbstractAnimal {
     public void setName(String name) {
 
     }
+
+    @Override
+    public int getMaxAge() {
+        return 23;
+    }
+
+    public int maxAge = 25;
 }

@@ -4,6 +4,7 @@ import com.level.zoo.animal.impl.Cat;
 import com.level.zoo.animal.impl.Dog;
 import com.level.zoo.animal.impl.Elephant;
 import com.level.zoo.animal.impl.Tiger;
+import com.level.zoo.workWithFile.FileWorker;
 
 /**
  * Created by cube on 09.11.2017.
@@ -48,29 +49,54 @@ public class AnimalInitializer {
 
     public static Animal createAnimalByName(String animalType, String animalName, int animalAge) throws IllegalAccessException, InstantiationException {
         AbstractAnimal animal;
+        String fileName = "src/com/level/zoo/workWithFile/zooFile2";
         switch (animalType){
             case "Tiger":
                 animal = new Tiger();
                 animal.name = animalName;
-                animal.age = animalAge;
+                if (animal.inMaxAgeInterval(animal.getMaxAge(), animalAge)){
+                    animal.age = animalAge;
+                } else {
+                    System.out.println("Твоя скотина слишком стара (или молода) чтобы жить.");
+                    animal.age = animal.getMaxAge();
+                }
                 break;
             case "Elephant":
                 animal = new Elephant();
                 animal.name = animalName;
-                animal.age = animalAge;
+                if (animal.inMaxAgeInterval(animal.getMaxAge(), animalAge)){
+                    animal.age = animalAge;
+                } else {
+                    System.out.println("Твоя скотина слишком стара (или молода) чтобы жить.");
+                    animal.age = animal.getMaxAge();
+                }
                 break;
             case "Cat":
                 animal = new Cat();
                 animal.name = animalName;
-                animal.age = animalAge;
+                if (animal.inMaxAgeInterval(animal.getMaxAge(), animalAge)){
+                    System.out.println(animal.inMaxAgeInterval(animal.getMaxAge(), animalAge));
+                    animal.age = animalAge;
+                } else {
+                    System.out.println("Твоя скотина слишком стара (или молода) чтобы жить.");
+                    animal.age = animal.getMaxAge();
+                }
                 break;
             case "Dog":
                 animal = new Dog();
                 animal.name = animalName;
-                animal.age = animalAge;
+                if (animal.inMaxAgeInterval(animal.getMaxAge(), animalAge)){
+                    animal.age = animalAge;
+                } else {
+                    System.out.println("Твоя скотина слишком стара (или молода) чтобы жить.");
+                    animal.age = animal.getMaxAge();
+                }
                 break;
             default: throw new IllegalArgumentException("Invalid animal: " + animalType);
         }
+        System.out.println(animal.toString());
+        System.out.println(animal.name);
+        System.out.println(animal.age);
         return animal;
     }
 }

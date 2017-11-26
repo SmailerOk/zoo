@@ -22,4 +22,8 @@ public abstract class AbstractAnimal implements Animal {
 
     public int age;
     public String name;
+
+    public boolean inMaxAgeInterval(int maxAge, int age){
+        return (age > 0 && age < maxAge);
+    }
 }
