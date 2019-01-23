@@ -67,7 +67,7 @@ public class AnimalInitializer {
                 if (animal.inMaxAgeInterval(animal.getMaxAge(), animalAge)){
                     animal.age = animalAge;
                 } else {
-                    System.out.println("Твоя скотина слишком стара (или молода) чтобы жить.");
+                    System.out.println("Твое животное слишком стара (или молода) чтобы жить.");
                     animal.age = animal.getMaxAge();
                 }
                 break;
